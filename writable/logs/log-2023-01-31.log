@@ -1,0 +1,47 @@
+ERROR - 2023-01-31 04:54:10 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_masjid' in C:\xampp\htdocs\uas_web\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\xampp\htdocs\uas_web\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'db_masjid', 3306, '', 0)
+#1 C:\xampp\htdocs\uas_web\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\uas_web\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\uas_web\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\uas_web\system\Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\uas_web\system\BaseModel.php(624): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\uas_web\app\Models\User_model.php(20): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\uas_web\app\Controllers\Home.php(25): App\Models\User_model->login('admin', '21232f297a57a5a...')
+#8 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(925): App\Controllers\Home->login()
+#9 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\uas_web\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_masjid' in C:\xampp\htdocs\uas_web\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\xampp\htdocs\uas_web\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\uas_web\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\uas_web\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\uas_web\system\Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\uas_web\system\BaseModel.php(624): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\uas_web\app\Models\User_model.php(20): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\uas_web\app\Controllers\Home.php(25): App\Models\User_model->login('admin', '21232f297a57a5a...')
+#7 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(925): App\Controllers\Home->login()
+#8 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\uas_web\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\uas_web\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-31 04:54:10 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_masjid'
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tab_user`
+WHERE `username` = :username:
+AND `password` = :password:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(267): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\User_model.php(20): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\Home.php(25): App\Models\User_model->login('admin', '21232f297a57a5a743894a0e4a801fc3')
+ 7 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Home->login()
+ 8 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
